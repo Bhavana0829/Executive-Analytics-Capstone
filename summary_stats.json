@@ -1,0 +1,28 @@
+{
+  "quality": {
+    "rows": 15,
+    "missing_values": 0,
+    "duplicate_ids": 0,
+    "totalcharges_equals_monthly_x_tenure": true
+  },
+  "stats": {
+    "churn_rate": 0.4666666666666667,
+    "mrr": 1269.8500000000001,
+    "mrr_lost": 409.93,
+    "mrr_lost_pct": 0.32281765562861753,
+    "avg_mrr_churned": 58.56142857142857,
+    "avg_mrr_retained": 107.49000000000001,
+    "tenure_churned": 7.0,
+    "tenure_retained": 29.125,
+    "tickets_churned": 4.285714285714286,
+    "tickets_retained": 1.0,
+    "p_contract": 0.0001554001554001554,
+    "p_tickets3plus": 0.0001554001554001554,
+    "p_tenure_le12": 0.0013986013986013986,
+    "p_basic": 0.10023310023310024,
+    "p_upi_debit": 0.03496503496503497,
+    "m2m_lower95": 0.5903836027749966,
+    "contract_upper95": 0.36941664755281933,
+    "m2m_equals_3plus_tickets": true
+  }
+}

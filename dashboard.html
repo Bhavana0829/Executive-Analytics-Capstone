@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Churn Dashboard</title>
+<style>
+:root{--bg:#fff;--ink:#1F2933;--mut:#6B7280;--card:#F8FAFC;--line:#E5E7EB;--acc:#C2410C;--neu:#94A3B8}
+@media (prefers-color-scheme:dark){:root{--bg:#111418;--ink:#E5E7EB;--mut:#9CA3AF;--card:#1A1F26;--line:#2B323B;--acc:#F97316;--neu:#64748B}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:28px 16px 48px}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px}h2{font-size:18px;margin:32px 0 12px}
+.sub{color:var(--mut);margin:0 0 20px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile b{display:block;font-size:28px;color:var(--acc)}.tile span{color:var(--mut);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{font-size:15px;margin:0 0 12px;display:flex;gap:8px;align-items:flex-start}
+.n{background:var(--acc);color:#fff;border-radius:50%;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+.card p{color:var(--mut);font-size:13.5px;margin:12px 0 0}
+.row{display:grid;grid-template-columns:96px 1fr 84px;align-items:center;gap:8px;margin:6px 0;font-size:13px}
+.track{background:var(--line);border-radius:4px;height:14px}.bar{height:14px;border-radius:4px}
+.bar.hi{background:var(--acc)}.bar.lo{background:var(--neu)}.val{text-align:right}.val small{color:var(--mut)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.out{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:12px}
+.out div b{display:block;font-size:22px}.out div span{color:var(--mut);font-size:12.5px}
+ul{padding-left:20px;margin:8px 0}li{margin:4px 0}.note{color:var(--mut);font-size:13px}
+.call{border-left:4px solid var(--acc);padding:6px 12px;margin:16px 0;background:var(--card)}
+</style></head><body><main>
+<h1>Churn is a month-to-month problem: 7 of 7 left, 0 of 8 on contracts</h1>
+<p class="sub">Executive dashboard, 15 customers. Directional evidence only: the sample is small.</p>
+<div class="tiles">
+<div class="tile"><b>46.7%</b><span>customers churned (7 of 15)</span></div>
+<div class="tile"><b>$410</b><span>monthly revenue lost (32.3% of $1,270)</span></div>
+<div class="tile"><b>7 vs 29</b><span>avg tenure in months, churned vs retained</span></div>
+<div class="tile"><b>4.3 vs 1.0</b><span>avg support tickets, churned vs retained</span></div>
+</div>
+<h2>Five insights</h2><div class="grid"><section class="card"><h3><span class="n">1</span>Contract type separates churners from stayers</h3><div class="row"><span class="lab">Month-to-Month</span><div class="track"><div class="bar hi" style="width:100.0%"></div></div><span class="val">100% <small>(7/7)</small></span></div><div class="row"><span class="lab">One Year</span><div class="track"><div class="bar lo" style="width:0.8%"></div></div><span class="val">0% <small>(0/4)</small></span></div><div class="row"><span class="lab">Two Year</span><div class="track"><div class="bar lo" style="width:0.8%"></div></div><span class="val">0% <small>(0/4)</small></span></div><p>All 7 month-to-month customers churned; no customer on a one- or two-year contract did.</p></section><section class="card"><h3><span class="n">2</span>Customers churn early</h3><div class="row"><span class="lab">1-6</span><div class="track"><div class="bar hi" style="width:100.0%"></div></div><span class="val">100% <small>(4/4)</small></span></div><div class="row"><span class="lab">7-12</span><div class="track"><div class="bar hi" style="width:100.0%"></div></div><span class="val">100% <small>(2/2)</small></span></div><div class="row"><span class="lab">13-24</span><div class="track"><div class="bar lo" style="width:20.0%"></div></div><span class="val">20% <small>(1/5)</small></span></div><div class="row"><span class="lab">25+</span><div class="track"><div class="bar lo" style="width:0.8%"></div></div><span class="val">0% <small>(0/4)</small></span></div><p>Everyone with up to 12 months of tenure left; nobody past 24 months did.</p></section><section class="card"><h3><span class="n">3</span>Heavy support contact precedes churn</h3><div class="row"><span class="lab">0-2</span><div class="track"><div class="bar lo" style="width:0.8%"></div></div><span class="val">0% <small>(0/8)</small></span></div><div class="row"><span class="lab">3-4</span><div class="track"><div class="bar hi" style="width:100.0%"></div></div><span class="val">100% <small>(4/4)</small></span></div><div class="row"><span class="lab">5+</span><div class="track"><div class="bar hi" style="width:100.0%"></div></div><span class="val">100% <small>(3/3)</small></span></div><p>0-2 tickets: nobody churned. 3+ tickets: everyone did. Same 7 people as month-to-month.</p></section><section class="card"><h3><span class="n">4</span>Low-priced plans lose the most customers</h3><div class="row"><span class="lab">Basic</span><div class="track"><div class="bar hi" style="width:71.4%"></div></div><span class="val">71% <small>(5/7)</small></span></div><div class="row"><span class="lab">Pro</span><div class="track"><div class="bar hi" style="width:50.0%"></div></div><span class="val">50% <small>(2/4)</small></span></div><div class="row"><span class="lab">Enterprise</span><div class="track"><div class="bar lo" style="width:0.8%"></div></div><span class="val">0% <small>(0/4)</small></span></div><p>Churners pay $58.56 a month versus $107.49 for stayers, so revenue loss is 32%, below the 47% customer loss.</p></section><section class="card"><h3><span class="n">5</span>Payment method: weak signal</h3><div class="row"><span class="lab">UPI</span><div class="track"><div class="bar hi" style="width:75.0%"></div></div><span class="val">75% <small>(3/4)</small></span></div><div class="row"><span class="lab">Debit Card</span><div class="track"><div class="bar hi" style="width:100.0%"></div></div><span class="val">100% <small>(2/2)</small></span></div><div class="row"><span class="lab">Credit Card</span><div class="track"><div class="bar lo" style="width:33.3%"></div></div><span class="val">33% <small>(2/6)</small></span></div><div class="row"><span class="lab">Bank Transfer</span><div class="track"><div class="bar lo" style="width:0.8%"></div></div><span class="val">0% <small>(0/3)</small></span></div><p>UPI and debit payers churn more, but this likely mirrors contract and plan. Treat as a hypothesis.</p></section></div>
+<div class="call"><b>Note:</b> the month-to-month customers and the customers with 3+ tickets are the same 7 people, so this sample cannot separate contract effect from support experience.</div>
+<h2>Impact explorer (what-if, not a forecast)</h2>
+<div class="box"><label for="s"><b>Share of would-be churners saved: <span id="sv">20</span>%</b></label>
+<input id="s" type="range" min="0" max="50" value="20">
+<div class="out">
+<div><b id="o1"></b><span>churn rate after (now 46.7%)</span></div>
+<div><b id="o2"></b><span>customers saved of 7</span></div>
+<div><b id="o3"></b><span>monthly revenue kept</span></div>
+<div><b id="o4"></b><span>revenue kept per year</span></div></div>
+<p class="note">Assumes a saved customer pays the average churner's $58.56 a month for 12 months. Program cost not included. The 10-30% range in the brief is a planning assumption to be replaced by pilot results.</p></div>
+<h2>Limitations</h2><div class="box"><ul>
+<li><b>Very small sample.</b> 100% and 0% rates are sample facts; month-to-month churn could plausibly be as low as about 59%.</li>
+<li><b>Drivers overlap.</b> Contract, tickets and early tenure describe largely the same customers.</li>
+<li><b>Association, not cause.</b> The pilot is what tests whether contracts retain customers.</li>
+<li><b>No timing, reasons or cost data.</b> Impact is revenue kept, not profit.</li></ul></div>
+<h2>Recommended action</h2><div class="box"><ul>
+<li>Offer month-to-month customers a discounted annual plan at 60-90 days.</li>
+<li>Add a first-year onboarding check-in programme.</li>
+<li>Trigger proactive outreach on the third support ticket.</li>
+<li>Run it as a 90-day pilot with a holdout group; success is at least 5 points lower churn than the holdout.</li></ul></div>
+</main>
+<script>
+var K=7,N=15,LOST=409.93;
+function upd(){var p=+document.getElementById('s').value/100;
+document.getElementById('sv').textContent=Math.round(p*100);
+document.getElementById('o1').textContent=((K-K*p)/N*100).toFixed(1)+'%';
+document.getElementById('o2').textContent=(K*p).toFixed(1);
+document.getElementById('o3').textContent='$'+(LOST*p).toFixed(0);
+document.getElementById('o4').textContent='$'+(LOST*p*12).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+document.getElementById('s').addEventListener('input',upd);upd();
+</script></body></html>

@@ -1,0 +1,6 @@
+#,insight,evidence,exact_p_one_sided,confidence
+1,Contract type separates churners from stayers,Month-to-month 7/7 churned; one-year 0/4; two-year 0/4,0.0002,"High (sample), but confounded"
+2,Customers churn early,Tenure up to 12 months: 6/6 churned; 25+ months: 0/4,0.0014,Medium
+3,Heavy support contact precedes churn,0-2 tickets: 0/8 churned; 3+ tickets: 7/7 churned,0.0002,"High (sample), but identical to contract split"
+4,Churn hits low-priced plans; revenue loss is smaller than customer loss,"Basic 5/7, Pro 2/4, Enterprise 0/4; churners pay $58.56/mo vs $107.49",0.1002,Medium
+5,UPI and debit-card payers churn more (weak signal),"UPI 3/4, debit 2/2, credit card 2/6, bank transfer 0/3",0.035,Low; likely a proxy for contract/plan
